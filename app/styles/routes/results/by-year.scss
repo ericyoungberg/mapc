@@ -9,4 +9,35 @@
 
   .results-panel { flex: 1; }
 
+  nav {
+    ul {
+      a {
+        $trans: opacity .15s, border-width .15s;
+        $border_width: 5px;
+
+        display: inline-block; 
+
+        padding: 6px 16px;
+
+        border-left: 1px solid $color_bg-medium;
+
+        opacity: .4;
+        transition: $trans;
+
+        &:hover {
+          border-width: $border_width;
+
+          opacity: .7; 
+          transition: $trans;
+        }
+
+        &.active {
+          border-width: $border_width; 
+
+          opacity: 1;
+          transition: $trans;
+        }
+      }
+    } 
+  }
 }
