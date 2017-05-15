@@ -8,7 +8,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('results', function() {
-    this.route('by-year');
+    this.route('by-year', {path: '/:year'});
   });
 });
 
