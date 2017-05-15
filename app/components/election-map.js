@@ -14,19 +14,25 @@ export default Ember.Component.extend({
 
     const path = d3.geo.path().projection(projection);
 
-    // Find the winners for each state
-    let winner, state, competitors;
-    const winners = Object.values(results).reduce((winners, result) => {
-      competitors = Object.values(result);
+    let winners = {};
+    if (Object.values(results).length === 0) {
+      this.set('noData', true);
+    }
+    else {
+      // Find the winners for each state
+      let winner, state, competitors;
+      winners = Object.values(results).reduce((winners, result) => {
+        competitors = Object.values(result);
 
-      state = competitors[0].state; // We need to get the current state from a piece of our data
+        state = competitors[0].state; // We need to get the current state from a piece of our data
 
-      winners[state] = Object.values(result).reduce((winning, competitor) => {
-        return (winning.votes > competitor.votes) ? winning : competitor;
+        winners[state] = Object.values(result).reduce((winning, competitor) => {
+          return (winning.votes > competitor.votes) ? winning : competitor;
+        });
+      
+        return winners;
       });
-    
-      return winners;
-    });
+    }
 
     // Following section built by referencing http://bl.ocks.org/michellechandra/0b2ce4923dc9b5809922
     d3.json('/assets/data/us-paths.json', (err, us) => {

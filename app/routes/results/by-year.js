@@ -15,7 +15,7 @@ export default Ember.Route.extend({
 
   model(params) {
     this.set('currentYear', params.year);
-    return (params.year === 'current') ? [] : Ember.$.ajax({url: `/assets/data/results_${params.year}.json`});
+    return (params.year === 'current') ? {} : Ember.$.ajax({url: `/assets/data/results_${params.year}.json`});
   },
 
 
