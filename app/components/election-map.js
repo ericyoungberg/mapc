@@ -8,8 +8,6 @@ export default Ember.Component.extend({
   didRender() {
     const results = this.get('results');
 
-    console.log(results);
-
     const projection = d3.geo.albersUsa()
       .scale(1000)
       .translate([this.get('width')/2, this.get('height')/2]);
@@ -32,7 +30,22 @@ export default Ember.Component.extend({
     d3.json('/assets/data/us-paths.json', (err, us) => {
       if (err) throw err;
 
-      console.log(us);
+      const svg = d3.select('.election-map')      
+        .append('svg')
+        .attr('class', 'states')
+        .attr('height', this.get('height'))
+        .attr('width', this.get('width'));
+
+      svg.selectAll('path') 
+        .data(us.features)
+        .enter()
+        .append('path')
+        .attr('d', path)
+        .attr('class', stateData => {
+          let state = stateData.properties.NAME;
+
+          return (winners[state]) ? winners[state].parties[0].toLowerCase().replace(' ', '-') : '';
+        });
     });
   }
   
