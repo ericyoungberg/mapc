@@ -8,7 +8,9 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('results', function() {
-    this.route('by-year', {path: '/:year'});
+    this.route('by-year', {path: '/:year'}, function() {
+      this.route('state', {path: '/:state'});
+    });
   });
 });
 

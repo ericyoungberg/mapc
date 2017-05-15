@@ -47,9 +47,14 @@ export default Ember.Component.extend({
           let state = stateData.properties.NAME;
 
           return (winners[state]) ? winners[state].parties[0].toLowerCase().replace(' ', '-') : '';
+        })
+        .on('click', stateData => {
+          let state = stateData.properties.NAME.toLowerCase().replace(' ', '-');
+
+          this.sendAction('showStateData', state);
         });
     });
-  }
+  },
   
 
 });

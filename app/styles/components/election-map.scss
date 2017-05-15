@@ -3,10 +3,21 @@
 .component.election-map {
 
   path {
+    $trans: opacity .15s;
+
     stroke: $color_bg-light; 
     stroke-width: 1px;
 
     fill: $color_bg-medium;
+
+    cursor: pointer;
+    opacity: .80;
+    transition: $trans;
+
+    &:hover {
+      opacity: 1;
+      transition: $trans;
+    }
 
     &.republican { fill: $republican; }
     &.democratic { fill: $democratic; }
