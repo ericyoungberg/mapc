@@ -1,0 +1,15 @@
+@import '../modules/parties';
+
+.component.election-map {
+
+  path {
+    stroke: $color_bg-light; 
+    stroke-width: 1px;
+
+    fill: $color_bg-medium;
+
+    &.republican { fill: $republican; }
+    &.democratic { fill: $democratic; }
+  }
+  
+}

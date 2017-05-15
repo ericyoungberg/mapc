@@ -19,7 +19,8 @@ export default Ember.Component.extend({
     const winners = Object.values(results).reduce((winners, result) => {
       competitors = Object.values(result);
 
-      state = competitors[0].state;
+      state = competitors[0].state; // We need to get the current state from a piece of our data
+
       winners[state] = Object.values(result).reduce((winning, competitor) => {
         return (winning.votes > competitor.votes) ? winning : competitor;
       });
@@ -27,6 +28,7 @@ export default Ember.Component.extend({
       return winners;
     });
 
+    // Following section built by referencing http://bl.ocks.org/michellechandra/0b2ce4923dc9b5809922
     d3.json('/assets/data/us-paths.json', (err, us) => {
       if (err) throw err;
 
