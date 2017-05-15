@@ -1,7 +1,24 @@
 .route.application {
 
   width: 70%;
+  min-height: 95vh;
   margin: 0 auto;
   padding: 25px 0;
 
+}
+
+footer {
+  @extend ._clear;
+
+  width: 100%;
+
+  .copyright {
+    float: right; 
+
+    margin-right: 5%;
+
+    color: $color_font-medium;
+    font-size: 10px;
+    font-style: italic;
+  }
 }
