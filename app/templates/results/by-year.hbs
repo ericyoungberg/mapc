@@ -2,10 +2,21 @@
   <h1>Presedential Election Results</h1>
 
   <section class="results-window">
-    <div class="results-panel">
-    </div>
 
     <div class="results-panel">
-    </div>
+      <nav>
+        <ul>
+          <li>{{#link-to 'results.by-year' 'current'}}Current{{/link-to}}</li>
+          <li>{{#link-to 'results.by-year' '2012'}}2012{{/link-to}}</li>
+          <li>{{#link-to 'results.by-year' '2008'}}2008{{/link-to}}</li>
+          <li>{{#link-to 'results.by-year' '2004'}}2004{{/link-to}}</li>
+        </ul>
+      </nav>
+    </div><!-- /.results-panel -->
+
+    <div class="results-panel">
+    </div><!-- /.results-panel -->
+
   </section>
+
 </div>
