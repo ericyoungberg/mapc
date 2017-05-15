@@ -1,6 +1,9 @@
 @import 'normalize'; // Using the Normalize.css library to help with reset
 
-* { position: relative }
+* { 
+  position: relative;
+  box-sizing: border-box;
+}
 
 a {
   color: $color_font-dark;
