@@ -12,13 +12,35 @@
           <li>{{#link-to 'results.by-year' '2004'}}2004{{/link-to}}</li>
         </ul>
       </nav>
-    </div><!-- /.results-panel -->
+    </div><!--/ .results-panel -->
 
     <div class="results-panel">
+
+      {{#if isCurrentYear}}
+        <div class="add-election-data">
+          <h3>Add Data for Current Election</h3>
+
+          <div class="input-fields">
+            <div class='input-field'>
+              <label for="candidate">Candidate</label>
+              {{input name=candidate placeholder="Last, First"}}
+            </div>
+            <div class='input-field'>
+              <label for="state">State</label>
+              {{input name=state placeholder="Full Name or Abbreviation"}}
+            </div>
+            <div class='input-field'>
+              <label for="votes">No. of Votes</label>
+              {{input name=votes placeholder="1,000"}}
+            </div>
+          </div><!--/ .input-fields -->
+        </div><!--/ .add-election-data -->
+      {{/if}}
+
       {{election-map results=model showStateData='showStateData'}}
 
       {{outlet}}
-    </div><!-- /.results-panel -->
+    </div><!--/ .results-panel -->
 
   </section>
 

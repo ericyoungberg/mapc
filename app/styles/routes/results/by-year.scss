@@ -49,4 +49,40 @@
       }
     } 
   }
+
+  .add-election-data {
+    margin-bottom: 20px;
+
+    h3 { margin-bottom: 10px; }
+
+    .input-fields { display: flex; }  
+
+    .input-field {
+      margin: 0 1%;
+
+      font-size: 13px;
+    }
+
+    label {
+      display: block;
+
+      margin: 10px 0; 
+    }
+
+    input {
+      $trans: border-color .15s;
+
+      padding: 5px 10px; 
+
+      background: none;
+      border: 1px solid rgba($color_bg-medium, .6);
+      outline: none;
+      transition: $trans;
+
+      &:focus {
+        border-color: $color_bg-medium; 
+        transition: $trans;
+      }
+    }
+  }
 }
