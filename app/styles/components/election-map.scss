@@ -2,6 +2,11 @@
 
 .component.election-map {
 
+  svg { 
+    width: 100%; 
+    overflow: visible;
+  }
+
   path {
     $trans: opacity .15s;
 

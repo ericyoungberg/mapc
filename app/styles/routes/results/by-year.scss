@@ -7,7 +7,16 @@
 
   .results-window { display: flex; }
 
-  .results-panel { flex: 1; }
+  .results-panel {  
+    &:first-of-type {
+      flex: 1 1 15%;
+    }
+
+    &:nth-of-type(2) { 
+      flex: 1 1 85%;
+      width: 85%; 
+    }
+  }
 
   nav {
     ul {

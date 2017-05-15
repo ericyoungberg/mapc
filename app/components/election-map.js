@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
 
-  width: 960,
+  width: 800,
   height: 500,
 
   didRender() {
