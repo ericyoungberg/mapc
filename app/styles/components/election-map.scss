@@ -28,4 +28,26 @@
     &.democratic { fill: $democratic; }
   }
   
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: none;
+
+    width: 100%;
+    height: 100%;
+
+    text-align: center;
+
+    background: rgba($color_bg-light, .5);
+
+    h2 {
+      @extend ._vertical-center; 
+
+      margin: 0 auto;
+    }
+
+    &.noData { display: block; }
+  }
 }
