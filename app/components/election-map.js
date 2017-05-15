@@ -29,7 +29,11 @@ export default Ember.Component.extend({
       return winners;
     });
 
-    console.log(winners);
+    d3.json('/assets/data/us-paths.json', (err, us) => {
+      if (err) throw err;
+
+      console.log(us);
+    });
   }
   
 
