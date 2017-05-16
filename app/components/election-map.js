@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import d3 from 'npm:d3';
 
 export default Ember.Component.extend({
 
@@ -15,11 +16,11 @@ export default Ember.Component.extend({
   renderMap() {
     const results = this.get('results');
 
-    const projection = d3.geo.albersUsa()
+    const projection = d3.geoAlbersUsa()
       .scale(1000)
       .translate([this.get('width')/2, this.get('height')/2]);
 
-    const path = d3.geo.path().projection(projection);
+    const path = d3.geoPath().projection(projection);
 
     /**
      * We must remove the svg element if there is one. Otherwise we
